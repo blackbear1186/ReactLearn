@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Greeting name='Berlin' numberOfMessages={56}/>
+        <Greeting name='Berlin' numberOfMessages={98}/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           What's Good {noun}!
