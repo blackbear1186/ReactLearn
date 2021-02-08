@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-
+    
         <Greeting name='Berlin' numberOfMessages={98}/>
         <PeopleList people={people}/>
         {/* Anonymous arrow function called inside button */}

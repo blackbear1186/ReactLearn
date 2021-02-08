@@ -2,3 +2,5 @@ create people array->create peoplelist file/function->import PeopleList to App->
 input <PeopleList people={people}/> -> in peoplelist function map through people array
 create function->give parameter->empty div->map->div->content
 add key to <PeopleListItem key={}/> to get rid of key error
+create peopelist.css in src -> import css file in peoplelistitem.js->add styles
+npm install styled-components for css in javascript
