@@ -29,13 +29,18 @@ function App() {
 
   let noun = 'Son';
   let url = "https://reactjs.org"
+
+  const displayAlert = () => {
+    alert('Hello');
+  }
   return (
     <div className="App">
       <header className="App-header">
 
         <Greeting name='Berlin' numberOfMessages={98}/>
         <PeopleList people={people}/>
-        
+        {/* Anonymous arrow function called inside button */}
+        <button onClick={() => alert('hello')}>Click Me!</button>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           What's Good {noun}!
