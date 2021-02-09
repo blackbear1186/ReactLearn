@@ -1,6 +1,5 @@
 import React from "react";
 export const Greeting = ({name, numberOfMessages }) => {
-  
   if(!name){return null}
   let isMorning = new Date().getHours() < 12;
   let greetingHeader = isMorning ? (

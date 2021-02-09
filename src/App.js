@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import { CounterButton } from './components/CounterButton'
 import { Greeting } from './components/Greeting';
 import { PeopleList } from './components/PeopleList';
 
@@ -36,23 +37,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-    
-        <Greeting name='Berlin' numberOfMessages={98}/>
-        <PeopleList people={people}/>
-        {/* Anonymous arrow function called inside button */}
-        <button onClick={() => alert('hello')}>Click Me!</button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          What's Good {noun}!
-        </p>
-        <a
-          className="App-link"
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <CounterButton />
       </header>
     </div>
   );
