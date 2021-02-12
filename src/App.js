@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import React from 'react';
-import { CounterButton } from './components/CounterButton'
+import React, {useState} from 'react';
+import { CounterButton } from './components/CounterButton';
+import { CongratulationsMessage } from './components/CongratulationsMessage';
+import { StarRating } from './components/StarRating';
 import { Greeting } from './components/Greeting';
 import { PeopleList } from './components/PeopleList';
 
@@ -27,9 +29,11 @@ const people = [{
 
 function App() {
  
+  const [numberOfClicks, setNumberOfClicks] = useState(0); 
 
-  let noun = 'Son';
-  let url = "https://reactjs.org"
+  const increment = () => setNumberOfClicks(numberOfClicks + 1);
+
+  
 
   const displayAlert = () => {
     alert('Hello');
@@ -37,7 +41,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <CounterButton />
+        <StarRating />
+        {/* <CounterButton onIncrement={increment} numberOfClicks={numberOfClicks} /> */}
       </header>
     </div>
   );
