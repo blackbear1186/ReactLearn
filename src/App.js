@@ -6,6 +6,8 @@ import { CongratulationsMessage } from './components/CongratulationsMessage';
 import { StarRating } from './components/StarRating';
 import { Greeting } from './components/Greeting';
 import { PeopleList } from './components/PeopleList';
+import colorData from './color-data.json';
+import ColorList from './components/ColorList';
 
 // array of people
 const people = [{
@@ -27,25 +29,25 @@ const people = [{
 }
 ];
 
-function App() {
+export default function App() {
  
-  const [numberOfClicks, setNumberOfClicks] = useState(0); 
-
-  const increment = () => setNumberOfClicks(numberOfClicks + 1);
-
+  // store color data in useState color array
+  // store state in the root App and pass colors down to child components
+  const [colors] = useState(colorData);
   
 
-  const displayAlert = () => {
-    alert('Hello');
-  }
+  // const [numberOfClicks, setNumberOfClicks] = useState(0); 
+
+  // const increment = () => setNumberOfClicks(numberOfClicks + 1);
+
+  
   return (
     <div className="App">
       <header className="App-header">
-        <StarRating />
+        <ColorList colors={colors} />
         {/* <CounterButton onIncrement={increment} numberOfClicks={numberOfClicks} /> */}
       </header>
     </div>
   );
 }
 
-export default App;
