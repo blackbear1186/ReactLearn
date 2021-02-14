@@ -33,7 +33,7 @@ export default function App() {
  
   // store color data in useState color array
   // store state in the root App and pass colors down to child components
-  const [colors] = useState(colorData);
+  const [colors, setColors ] = useState(colorData);
   
 
   // const [numberOfClicks, setNumberOfClicks] = useState(0); 
@@ -44,7 +44,10 @@ export default function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ColorList colors={colors} />
+        <ColorList colors={colors} onRemoveColor={id => {
+          const newColors = colors.filter(color => color.id !== id);
+          setColors(newColors);
+        }}/>
         {/* <CounterButton onIncrement={increment} numberOfClicks={numberOfClicks} /> */}
       </header>
     </div>
