@@ -1,11 +1,14 @@
-import React, { useRef } from "react";
-
 import React from "react";
+import { useInput } from '../hooks';
 
-export const AddColorForm = ({ onNewColor = (f) => f }) => {
+export default function AddColorForm({ onNewColor = (f) => f }){
   // create variables for title and color and define functions to change state-> setTitle
-  const [title, setTitle] = useState("");
-  const [color, setColor] = useState("#000000");
+  // const [title, setTitle] = useState("");
+  // const [color, setColor] = useState("#000000");
+
+  // do the same as above using custom useInput hook
+  const [titleProps, resetTitle] = useInput('');
+  const [colorProps, resetColor] = useInput('#000000');
 
   /*
     When it's time to submit the form, we can pass the state values for title and color to
@@ -15,9 +18,11 @@ export const AddColorForm = ({ onNewColor = (f) => f }) => {
   */
   const submit = (e) => {
     e.preventDefault();
-    onNewColor(title, color);
-    setTitle = '';
-    setColor = '';
+    onNewColor(titleProps.value, colorProps.value);
+    resetTitle();
+    resetColor();
+    // setTitle = '';
+    // setColor = '';
   };
   /*
     Now that the component controls the values for title and color, we can display them inside 
@@ -28,7 +33,7 @@ export const AddColorForm = ({ onNewColor = (f) => f }) => {
   */ 
   return (
     <form onSubmit={submit}>
-      <input
+      {/* <input
         value={title}
         onChange={(event) => setTitle(event.target.value)}
         type="text"
@@ -39,6 +44,18 @@ export const AddColorForm = ({ onNewColor = (f) => f }) => {
         value={color}
         onChange={(event) => setColor(event.target.value)}
         type="color"
+        required
+      /> */}
+
+      <input 
+        {...titleProps}
+        type="text"
+        placeholder="color title..."
+        required
+      />
+      <input 
+        {...colorProps}
+        type='color'
         required
       />
       <button>ADD</button>
