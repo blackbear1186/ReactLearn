@@ -46,6 +46,12 @@ export default function App() {
     from the arguments and use it to filter the list of colors to exclude the color clicked. 
     Next we change the state with setColors function to change the array colors to the newly 
     filtered array.*/
+    
+  /*The color ratings will change when the ColorList invokes the onRateColor property with the
+  id of the color to rate and the new rating.We use those values to construct an array of new
+  colors by mapping over the existing colors and changing the rating for the color that matches
+  the id property.Once we send the newColors to the setColors function, the state value for
+  colors will change and the App component will be invoked with new value for the colors array.*/
   return (
     <div className="App">
       <header className="App-header">
