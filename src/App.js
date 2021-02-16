@@ -35,7 +35,14 @@ import { v4 } from "uuid";
 //   },
 // ];
 
-export default function App() {
+const App = () => {
+
+  return (
+    <>
+      <AddColorForm />
+      <ColorList />
+    </>
+  )
   // store color data in useState color array
   // store state in the root App and pass colors down to child components
 
@@ -54,40 +61,40 @@ export default function App() {
   the id property.Once we send the newColors to the setColors function, the state value for
   colors will change and the App component will be invoked with new value for the colors array.*/
 
-  const [colors, setColors] = useState(colorData);
+  // const [colors, setColors] = useState(colorData);
 
-  const removeColor = (id) => {
-    const newColors = colors.filter((color) => color.id !== id);
-    setColors(newColors);
-  };
+  // const removeColor = (id) => {
+  //   const newColors = colors.filter((color) => color.id !== id);
+  //   setColors(newColors);
+  // };
 
-  const rateColor = (id, rating) => {
-    const newColors = colors.map((color) =>
-      color.id === id ? { ...color, rating } : color
-    );
-    setColors(newColors);
-  };
+  // const rateColor = (id, rating) => {
+  //   const newColors = colors.map((color) =>
+  //     color.id === id ? { ...color, rating } : color
+  //   );
+  //   setColors(newColors);
+  // };
 
-  return (
-    <>
-      <AddColorForm
-        onNewColor={(title, color) => {
-          const newColors = [
-            ...colors,
-            {
-              id: v4(),
-              rating: 0,
-              title,
-              color,
-            },
-          ];
-          setColors(newColors);
-        }}
-      />
-      <ColorList colors={colors} 
-      onRemoveColor={removeColor}
-      onRateColor={rateColor} />
-    </>
+  // return (
+  //   <>
+  //     <AddColorForm
+  //       onNewColor={(title, color) => {
+  //         const newColors = [
+  //           ...colors,
+  //           {
+  //             id: v4(),
+  //             rating: 0,
+  //             title,
+  //             color,
+  //           },
+  //         ];
+  //         setColors(newColors);
+  //       }}
+  //     />
+  //     <ColorList colors={colors} 
+  //     onRemoveColor={removeColor}
+  //     onRateColor={rateColor} />
+  //   </>
     // <div className="App">
     //   <header className="App-header">
     //     <ColorList
@@ -105,5 +112,6 @@ export default function App() {
     //     {/* <CounterButton onIncrement={increment} numberOfClicks={numberOfClicks} /> */}
     //   </header>
     // </div>
-  );
 }
+
+export default App;
