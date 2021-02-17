@@ -1,5 +1,5 @@
 import React from "react";
-import { useInput } from '../hooks';
+import { useInput } from '../../hooks';
 
 export default function AddColorForm({ onNewColor = (f) => f }){
   // create variables for title and color and define functions to change state-> setTitle
