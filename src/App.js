@@ -1,7 +1,7 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import React, { useState } from "react";
-import { Home, CounterButtonPage, PeopleListPage } from "./pages";
+import { Home, CounterButtonPage, PeopleListPage, NotFoundPage } from "./pages";
 import { CongratulationsMessage } from "./components/CongratulationsMessage";
 import { Greeting } from "./components/Greeting";
 import { PeopleList } from "./components/PeopleList";
@@ -34,21 +34,29 @@ const App = () => {
   const [numberOfClicks, setNumberOfClicks] = useState(0);
   const increment = () => setNumberOfClicks(numberOfClicks + 1);
   // exact to make sure the url is displayed only if the route matches exactly
+  // Not found page has not route path so will be displayed all the time
+  // Import Switch and wrap all routes in it to have each page displayed separately
+
   return (
     <div className="App">
       <Router>
-        <Link to="/counter">Go to the Counter Page</Link>
-        <Link to="/people-list">Go to the People List Page</Link>
+        <Link to="/counter">Go to the Counter Page</Link><br></br>
+        <Link to="/people-list">Go to the People List Page</Link><br></br>
         <Link to="/">Go to the Home Page</Link>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/counter">
-          <CounterButtonPage />
-        </Route>
-        <Route path="/people-list">
-          <PeopleListPage />
-        </Route>
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/counter">
+            <CounterButtonPage />
+          </Route>
+          <Route path="/people-list">
+            <PeopleListPage />
+          </Route>
+          <Route>
+            <NotFoundPage />
+          </Route>
+        </Switch>
       </Router>
     </div>
   );
