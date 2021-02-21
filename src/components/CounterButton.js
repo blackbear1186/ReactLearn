@@ -1,14 +1,25 @@
-import React, { useEffect } from 'react'
+import React from "react";
+import { useState, useEffect } from "react";
+import { Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
-export const CounterButton = ({ onIncrement, numberOfClicks }) => {
+export const CounterButton = () => {
+  const [numberOfClicks, setNumberOfClicks] = useState(0);
+
   useEffect(() => {
-    console.log('useEffect function called!');
-  })
- 
+    console.log(`You have clicked me ${numberOfClicks} times.`);
+  }, [numberOfClicks])
   return (
     <>
-      <p>You've clicked the button {numberOfClicks} times</p>
-      <button onClick={onIncrement}>Click Me!</button>
+      <Container className="text-center mx-auto">
+        <p>You clicked me {numberOfClicks} times</p>
+        <Button
+          variant="primary"
+          onClick={() => setNumberOfClicks(numberOfClicks + 1)}
+        >
+          Click Me
+        </Button>
+      </Container>
     </>
-  )
+  );
 }
