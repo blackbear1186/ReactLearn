@@ -1,7 +1,13 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import React, { useState } from "react";
-import { Home, CounterButtonPage, PeopleListPage, NotFoundPage } from "./pages";
+import {
+  Home,
+  CounterButtonPage,
+  PeopleListPage,
+  NotFoundPage,
+  ProtectedPage,
+} from "./pages";
 import { CongratulationsMessage } from "./components/CongratulationsMessage";
 import { Greeting } from "./components/Greeting";
 import { PeopleList } from "./components/PeopleList";
@@ -40,8 +46,10 @@ const App = () => {
   return (
     <div className="App">
       <Router>
-        <Link to="/counter">Go to the Counter Page</Link><br></br>
-        <Link to="/people-list">Go to the People List Page</Link><br></br>
+        <Link to="/counter">Go to the Counter Page</Link>
+        <br></br>
+        <Link to="/people-list">Go to the People List Page</Link>
+        <br></br>
         <Link to="/">Go to the Home Page</Link>
         <Switch>
           <Route path="/" exact>
@@ -52,6 +60,9 @@ const App = () => {
           </Route>
           <Route path="/people-list">
             <PeopleListPage />
+          </Route>
+          <Route path="/protected">
+            <ProtectedPage />
           </Route>
           <Route>
             <NotFoundPage />
