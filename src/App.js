@@ -37,8 +37,8 @@ const App = () => {
   return (
     <div className="App">
       <Router>
-        <Link to="/counter">Go to the Counter Page</Link><br></br>
-        <Link to="/people-list">Go to the People List Page</Link><br></br>
+        <Link to="/counter">Go to the Counter Page</Link>
+        <Link to="/people-list">Go to the People List Page</Link>
         <Link to="/">Go to the Home Page</Link>
         <Route path="/" exact>
           <Home />

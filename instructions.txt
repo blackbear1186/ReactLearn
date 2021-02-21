@@ -5,3 +5,4 @@ add key to <PeopleListItem key={}/> to get rid of key error
 create peopelist.css in src -> import css file in peoplelistitem.js->add styles
 npm install styled-components for css in javascript
 npm install react-router-dom
+create pages files -> create index.js -> add router to app.js for react router 
