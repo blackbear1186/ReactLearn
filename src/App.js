@@ -7,6 +7,8 @@ import {
   PeopleListPage,
   NotFoundPage,
   ProtectedPage,
+  ControlledFormPage,
+  UncontrolledFormPage,
 } from "./pages";
 import { CongratulationsMessage } from "./components/CongratulationsMessage";
 import { Greeting } from "./components/Greeting";
@@ -63,6 +65,12 @@ const App = () => {
           </Route>
           <Route path="/protected">
             <ProtectedPage />
+          </Route>
+          <Route path="/controlled">
+            <ControlledFormPage />
+          </Route>
+          <Route path='/uncontrolled'>
+            <UncontrolledFormPage />
           </Route>
           <Route>
             <NotFoundPage />
