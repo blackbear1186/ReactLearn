@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React, { useState } from "react";
 import {
   Home,
@@ -9,9 +9,10 @@ import {
   ProtectedPage,
   ControlledFormPage,
   UncontrolledFormPage,
+  UserProfilePage,
 } from "./pages";
-import {NavBar} from "./NavBar";
-import {FormsNavBar} from './FormsNavBar';
+import { NavBar } from "./NavBar";
+import { FormsNavBar } from "./FormsNavBar";
 
 const people = [
   {
@@ -61,14 +62,17 @@ const App = () => {
             <Route path="/protected">
               <ProtectedPage />
             </Route>
+            <Route path="/user">
+              <UserProfilePage />
+            </Route>
             <Route path="/forms">
               <Router>
-                <FormsNavBar/>
+                <FormsNavBar />
                 <Route path="/forms/controlled">
-                  <ControlledFormPage/>
+                  <ControlledFormPage />
                 </Route>
                 <Route path="/forms/uncontrolled">
-                  <UncontrolledFormPage/>
+                  <UncontrolledFormPage />
                 </Route>
               </Router>
             </Route>
