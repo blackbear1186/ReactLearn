@@ -13,6 +13,7 @@ import {
 } from "./pages";
 import { NavBar } from "./NavBar";
 import { FormsNavBar } from "./FormsNavBar";
+import { UserDataLoader } from "./components/UserDataLoader";
 
 const people = [
   {
@@ -63,7 +64,9 @@ const App = () => {
               <ProtectedPage />
             </Route>
             <Route path="/user">
-              <UserProfilePage />
+              <UserDataLoader>
+                <UserProfilePage />
+              </UserDataLoader>
             </Route>
             <Route path="/forms">
               <Router>
