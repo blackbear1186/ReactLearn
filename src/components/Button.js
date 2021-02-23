@@ -23,3 +23,13 @@ export const Button = ({ children, buttonColor, ...props }) => {
     <StyledButton buttonColor={buttonColor} {...props}>{children}</StyledButton>
   )
 }
+
+// create red danger button
+export const DangerButton = ({ children, ...props }) => {
+  return <Button buttonColor='red' {...props}>{children}</Button>
+}
+
+// create success danger button
+export const SuccessButton = ({ children, ...props }) => {
+  return <Button buttonColor='green' {...props}>{children}</Button>
+}

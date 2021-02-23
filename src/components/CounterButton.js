@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Container } from "react-bootstrap";
-import { Button } from "./Button";
+import { DangerButton } from "./Button";
 
 export const CounterButton = () => {
   const [numberOfClicks, setNumberOfClicks] = useState(0);
@@ -9,16 +8,17 @@ export const CounterButton = () => {
   useEffect(() => {
     console.log(`useEffect function called`);
   }, []);
+  // pass buttonColor value to Button
+
   return (
     <>
       <p>You clicked me {numberOfClicks} times</p>
-      // pass buttonColor value to Button
-      <Button
+      <DangerButton
         buttonColor="red"
         onClick={() => setNumberOfClicks(numberOfClicks + 1)}
       >
         Click Me
-      </Button>
+      </DangerButton>
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "../components/Button";
+import { SuccessButton } from "../components/Button";
 
 export const ControlledFormPage = () => {
   // create useState variables, functions and initialize to empty string
@@ -9,6 +9,8 @@ export const ControlledFormPage = () => {
 
   // set value equal to useState variable and use useState function to receive event target
   // value input as the input changes with onChange event handler
+  // pass buttonColor value to Button tag
+
   return (
     <form>
       <h3>Please enter your information:</h3>
@@ -36,9 +38,7 @@ export const ControlledFormPage = () => {
           onChange={(e) => setFavoriteColor(e.target.value)}
         />
       </div>
-      // pass buttonColor value to Button tag
-      <Button
-        buttonColor="green"
+      <SuccessButton
         onClick={(e) => {
           alert(`
           Your name is ${name},
@@ -49,7 +49,7 @@ export const ControlledFormPage = () => {
         }}
       >
         Submit
-      </Button>
+      </SuccessButton>
     </form>
   );
 };
