@@ -14,7 +14,6 @@ export const CounterButton = () => {
     <>
       <p>You clicked me {numberOfClicks} times</p>
       <DangerButton
-        buttonColor="red"
         onClick={() => setNumberOfClicks(numberOfClicks + 1)}
       >
         Click Me
