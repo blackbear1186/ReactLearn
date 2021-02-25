@@ -2,17 +2,12 @@ import React, { useState, useEffect } from "react";
 import { CounterButton } from "../components/CounterButton";
 import { CongratulationsMessage } from "../components/CongratulationsMessage";
 import { DisplayIf } from "../DisplayIf";
+import { usePersistentState } from '../usePersistentState';
 
 export const CounterButtonPage = () => {
   // starting will be a string so wrap in Number for number of clicks
-  const [numberOfClicks, setNumberOfClicks] = useState(
-    // get the numberOfClicks value, convert from string to number and set default value to 0
-    Number(localStorage.getItem("numberOfClicks"))
-  );
-  // set number of clicks value in local storage every time numberOfClick state changes
-  useEffect(() => {
-    localStorage.setItem("numberOfClicks", numberOfClicks);
-  }, [numberOfClicks]);
+  const [numberOfClicks, setNumberOfClicks] = usePersistentState('numberOfClicks', 0, Number);
+ 
 
   const increment = () => setNumberOfClicks(numberOfClicks + 1);
 

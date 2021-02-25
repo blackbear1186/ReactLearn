@@ -1,8 +1,10 @@
 import React from "react";
+import { useUserData } from '../useUserData';
 
-export const UserProfilePage = ({ user }) => {
-
-
+export const UserProfilePage = () => {
+  // use the the custom useUserData hook
+  // data comes a hook instead of from props
+  const user = useUserData();
   return (
     <div>
       <h3>
